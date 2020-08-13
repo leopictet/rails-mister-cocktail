@@ -1,0 +1,14 @@
+<div class="container padded">
+  <h1 class="text-center">Add new cocktail</h1>
+  <div class="row">
+    <div class="col-1 col-md-5">
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name%>
+          <%= f.submit "Submit this 💩", class: "btn btn-dark" %>
+        <% end %>
+        <div class="my-2">
+          <%= link_to "Back", cocktails_path, class: "btn btn-dark" %>
+        </div>
+    </div>
+  </div>
+</div>

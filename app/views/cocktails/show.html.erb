@@ -1,0 +1,30 @@
+<div class="container pad20">
+  <h1 class="text"> <%= @cocktail.name %> </h1>
+  <div class="pad10">
+
+  <ul class="list-unstyled pad20">
+    <% @cocktail.doses.each do |d| %>
+    <li>
+      <i class="fa fa-glass"></i> <strong> <%= d.ingredient.name %> </strong>
+      <%= link_to "Delete", dose_path(d), class: "btn btn-danger btn-xs", method: :delete  %>
+    </li>
+    <p class="pad10"><%= d.description %></p>
+    <% end %>
+  </ul>
+  <div class="pad20">
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-dark"%>
+    <%= link_to "Go back", cocktails_path, class: "btn btn-dark" %>
+  </div>
+    <div class="center" id="ingredient-form">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.input :ingredient, collection: Ingredient.order(:name),  prompt: "Pick one from list" %>
+            <%= f.input :description %>
+            <%= f.submit "Submit", class: "btn btn-dark" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+</div>

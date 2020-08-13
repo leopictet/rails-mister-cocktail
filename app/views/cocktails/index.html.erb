@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">Mes cocktails pour vomir 🤮</h1>
+  <h4 class="text-center">Choisis un 🍹 pour apprendre à gerber</h4>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+
+    <div class="col-xs col-sm-6">
+      <div class="card"">
+        <div class="card-description">
+          <h2> <%= link_to cocktail.name, cocktail_path(cocktail)%> </h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- Add button -->
+  <div class="my-3">
+    <%= link_to "Ajoute un cocktail pour faire genre tu as une vie", new_cocktail_path, class: "btn btn-dark" %>
+  </div>
+
+<!-- Close main div -->
+</div>
