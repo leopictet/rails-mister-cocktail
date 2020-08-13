@@ -6,6 +6,7 @@ before_action :set_cocktail, only: [ :new, :create ]
   end
 
   def create
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @cocktail = @dose.cocktail
     if @dose.save
@@ -25,6 +26,6 @@ private
     @cocktail = Cocktail.find(params[:cocktail_id])
   end
   def dose_params
-    params.require(:dose).permit(:description)
+    params.require(:dose).permit(:description, :cocktail_id)
   end
 end

@@ -1,9 +1,10 @@
 <div class="container padded">
-  <h1 class="">Add a boring ingredient</h1>
+  <h1 class="">Add a boring dose</h1>
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :ingredient, collection: Ingredient.order(:name), prompt: "Choose the one" %>
+      <%= f.inputs :ingredient %>
+      <%= f.input :description%>
       <%= f.submit "Submit", class: "btn btn-dark" %>
       <% end %>
       <div class="my-2">
