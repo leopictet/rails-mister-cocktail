@@ -23,7 +23,6 @@ before_action :set_cocktail, only: [ :new, :create ]
     redirect_to cocktail_path(@cocktail)
   end
 
-
 private
 
   def set_cocktail
@@ -32,4 +31,8 @@ private
   def dose_params
     params.require(:dose).permit(:description, :ingredient_id)
   end
+  def ingredient_params
+    params.require(:ingredient).permit(:name)
+  end
+
 end
