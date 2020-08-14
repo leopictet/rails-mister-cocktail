@@ -8,9 +8,9 @@ before_action :set_cocktail, only: [ :new, :create ]
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
-    @cocktail = @dose.cocktail
+    @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path(@cocktail), notice: "Successfully created"
     else
       render :new
     end
