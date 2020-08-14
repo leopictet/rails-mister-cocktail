@@ -8,16 +8,17 @@
 Ingredient.destroy_all
 Cocktail.destroy_all
 
-Ingredient.create(name: "Lemon")
-Ingredient.create(name: "Ice")
-Ingredient.create(name: "Mint")
-Ingredient.create(name: "Rhum")
-Ingredient.create(name: "Ginger")
-Ingredient.create(name: "Vodka")
-Ingredient.create(name: "Blueberries")
-Ingredient.create(name: "Watermelon")
-Ingredient.create(name: "Sugar")
-Ingredient.create(name: "Salt")
+Ingredient.create(name: "Lemon 🍋")
+Ingredient.create(name: "Ice 🧊")
+Ingredient.create(name: "Mint 🍃 ")
+Ingredient.create(name: "Rhum 🥃 ")
+Ingredient.create(name: "Ginger 🍠 ")
+Ingredient.create(name: "Chilli Pepper 🌶")
+Ingredient.create(name: "Coco 🥥")
+Ingredient.create(name: "Watermelon 🍉")
+Ingredient.create(name: "Beer 🍺")
+Ingredient.create(name: "Salt 🧂")
+Ingredient.create(name: "Milk 🥛")
 
 Cocktail.create(name: "Mojito")
 Cocktail.create(name: "Panama Beach")

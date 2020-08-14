@@ -7,15 +7,15 @@
       🆘 Pas d'ingredients pour permettre de gerber dans les meilleurs conditions
     </p>
     <% else %>
-    <h3> Ingredients </h2>
+    <h3> Les doses </h2>
       <% end %>
   </div>
 
-  <ul class="list-unstyled pad20">
-    <% @cocktail.doses.each do |dose| %>
-      <%= dose.ingredient.name %>
+    <%@cocktail.doses.each do |dose| %>
+      <ul class="middle">
+      <strong>Ingrédient:</strong> <%= dose.ingredient.name%> <strong>Description:</strong> <%= dose.description%>
       <%= link_to "Delete", dose_path(dose), method: :delete  %>
-      <%= dose.description %>
+      </ul>
     <%end%>
 
   <div class="pad20">
