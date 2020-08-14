@@ -26,6 +26,6 @@ private
     @cocktail = Cocktail.find(params[:cocktail_id])
   end
   def dose_params
-    params.require(:dose).permit(:description, :cocktail_id)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 end
